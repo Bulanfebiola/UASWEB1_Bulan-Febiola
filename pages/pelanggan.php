@@ -78,7 +78,7 @@ $data = mysqli_query($conn, "SELECT * FROM tbl_pelanggan");
         <td>
           <a href="dashboard.php?page=edit-pelanggan&id=<?= $row['id_customer']; ?>" class="
           btn btn-edit">Edit</a>
-          <a href="dashboard.php?page=hapus-pelanggan&id=<?= $row['id_customer']; ?>"
+          <a href="dashboard.php?page=hapuspelanggan&id=<?= $row['id_customer']; ?>"
             class="btn btn-hapus"
             onclick="return confirm('Yakin hapus data?')">
             Hapus
