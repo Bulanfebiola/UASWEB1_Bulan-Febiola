@@ -153,7 +153,7 @@ $grandtotal = 0;
         <td><?= number_format($k['harga']) ?></td>
         <td><?= $k['jumlah'] ?></td>
         <td><?= number_format($total) ?></td>
-        <td><a href="pages/hapus-keranjang.php?hapus=<?= $k['id_barang'] ?>" class="hapus">Hapus</a></td>
+        <td><a href="pages/hapuskeranjang.php?hapus=<?= $k['id_barang'] ?>" class="hapus">Hapus</a></td>
       </tr>
     <?php endforeach ?>
 
