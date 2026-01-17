@@ -3,14 +3,16 @@ include 'koneksi.php';
 
 if (isset($_POST['simpan'])) {
   $nama   = $_POST['nama'];
+  $kode_customer   = $_POST['kode_customer'];
   $alamat = $_POST['alamat'];
+  $no_hp = $_POST['no_hp'];
   $email  = $_POST['email'];
 
   mysqli_query($conn, "
         INSERT INTO tbl_pelanggan
-        (nama, alamat, email)
+        (nama, kode_customer, alamat, no_hp, email)
         VALUES
-        ('$nama', '$alamat', '$email')
+        ('$nama', '$kode_customer', '$alamat', '$no_hp', '$email')
     ");
 
   header("Location: dashboard.php?page=pelanggan");
@@ -98,8 +100,16 @@ if (isset($_POST['simpan'])) {
       <input type="text" name="nama" placeholder="" required>
     </div>
     <div class="form-group">
+      <label>Kode Pelanggan</label>
+      <input type="text" name="kode_customer" placeholder="" required>
+    </div>
+    <div class="form-group">
       <label>Alamat</label>
       <input type="text" name="alamat" placeholder="" required>
+    </div>
+    <div class="form-group">
+      <label>No HP</label>
+      <input type="text" name="no_hp" placeholder="" required>
     </div>
     <div class="form-group">
       <label>Email</label>

@@ -62,7 +62,9 @@ $data = mysqli_query($conn, "SELECT * FROM tbl_pelanggan");
     <tr>
       <th>No</th>
       <th>Nama</th>
+      <th>Kode Pelanggan</th>
       <th>Alamat</th>
+      <th>No HP</th>
       <th>Email</th>
       <th>Aksi</th>
     </tr>
@@ -73,7 +75,9 @@ $data = mysqli_query($conn, "SELECT * FROM tbl_pelanggan");
       <tr>
         <td><?= $no++; ?></td>
         <td><?= $row['nama']; ?></td>
+        <td><?= $row['kode_customer']; ?></td>
         <td><?= $row['alamat']; ?></td>
+        <td><?= $row['no_hp']; ?></td>
         <td><?= $row['email']; ?></td>
         <td>
           <a href="dashboard.php?page=editpelanggan&id=<?= $row['id_customer']; ?>" class="

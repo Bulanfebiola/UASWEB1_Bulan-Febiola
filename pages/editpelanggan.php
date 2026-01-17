@@ -3,18 +3,20 @@ include 'koneksi.php';
 $id = $_GET['id'];
 /* PROSES UPDATE */
 if (isset($_POST['update'])) {
-  mysqli_query($conn, "
+    mysqli_query($conn, "
 UPDATE tbl_pelanggan SET
 nama='$_POST[nama]',
+kode_customer='$_POST[kode_customer]',
 alamat='$_POST[alamat]',
+no_hp='$_POST[no_hp]',
 email='$_POST[email]'
 WHERE id_customer='$id'
 ");
-  header("Location: dashboard.php?page=pelanggan");
+    header("Location: dashboard.php?page=pelanggan");
 }
 /* AMBIL DATA */
 $data = mysqli_fetch_assoc(
-  mysqli_query($conn, "SELECT * FROM tbl_pelanggan WHERE id_customer='$id'")
+    mysqli_query($conn, "SELECT * FROM tbl_pelanggan WHERE id_customer='$id'")
 );
 ?>
 <style>
@@ -26,20 +28,20 @@ $data = mysqli_fetch_assoc(
         max-width: 600px;
         margin: auto;
     }
-    
+
     .card h3 {
         margin-bottom: 20px;
     }
-    
+
     .form-group {
         margin-bottom: 15px;
     }
-    
+
     .form-group label {
         display: block;
         margin-bottom: 5px;
     }
-    
+
     .form-group input {
         width: 100%;
         padding: 8px;
@@ -47,7 +49,7 @@ $data = mysqli_fetch_assoc(
         border: 1px solid #ccc;
         border-radius: 4px;
     }
-    
+
     .btn-edit {
         background: #2980b9;
         color: #fff;
@@ -65,8 +67,16 @@ $data = mysqli_fetch_assoc(
             <input type="text" name="nama" value="<?= $data['nama']; ?>" required>
         </div>
         <div class="form-group">
+            <label>Kode Pelanggan</label>
+            <input type="text" name="kode_customer" value="<?= $data['kode_customer']; ?>" required>
+        </div>
+        <div class="form-group">
             <label>Alamat</label>
             <input type="text" name="alamat" value="<?= $data['alamat']; ?>" required>
+        </div>
+        <div class="form-group">
+            <label>No HP</label>
+            <input type="text" name="no_hp" value="<?= $data['no_hp']; ?>" required>
         </div>
         <div class="form-group">
             <label>Email</label>
