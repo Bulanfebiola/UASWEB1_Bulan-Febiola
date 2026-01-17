@@ -76,7 +76,7 @@ $data = mysqli_query($conn, "SELECT * FROM tbl_pelanggan");
         <td><?= $row['alamat']; ?></td>
         <td><?= $row['email']; ?></td>
         <td>
-          <a href="dashboard.php?page=edit-pelanggan&id=<?= $row['id_customer']; ?>" class="
+          <a href="dashboard.php?page=editpelanggan&id=<?= $row['id_customer']; ?>" class="
           btn btn-edit">Edit</a>
           <a href="dashboard.php?page=hapuspelanggan&id=<?= $row['id_customer']; ?>"
             class="btn btn-hapus"
