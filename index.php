@@ -1,12 +1,13 @@
 <?php
 
 include "koneksi.php";
+session_start();
 
 //Proses Login
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $email = $_POST['email'] ?? '';
   $password = $_POST['password'] ?? '';
-  $result = mysqli_query($conn, "SELECT * FORM tbl_users WHERE email='$email'");
+  $result = mysqli_query($conn, "SELECT * FROM tbl_users WHERE email='$email'");
   if ($row = mysqli_fetch_assoc($result)) {
     if ($password == $row['password']) {
       $_SESSION['email'] = $row['email'];
