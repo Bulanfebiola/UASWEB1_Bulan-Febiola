@@ -100,10 +100,10 @@ session_start();
 <body>
   <div class="sidebar">
     <h2>Dashboard</h2>
-    <a href="#">Home</a>
+    <a href="?page=home">Home</a>
     <a href="?page=listproduk">List Produk</a>
     <a href="?page=pelanggan">Customer</a>
-    <a href="#">Transaksi</a>
+    <a href="?page=transaksi">Transaksi</a>
     <a href="#">Laporan</a>
   </div>
   <div class="header">
