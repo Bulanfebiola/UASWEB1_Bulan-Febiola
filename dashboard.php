@@ -111,7 +111,7 @@ session_start();
       <div class="profile-btn" onclick="toggleMenu()">Profile ▾</div>
       <div class="dropdown-content" id="profileMenu">
         <a href="dashboard.php?page=profile">My Profile</a>
-        <a href="#">Logout</a>
+        <a href="logout.php">Logout</a>
       </div>
     </div>
   </div>
